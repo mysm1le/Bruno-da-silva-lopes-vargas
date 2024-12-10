@@ -1,0 +1,186 @@
+/* Reseta margens e padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define o layout geral para o corpo */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* O elemento main ocupa o espaço disponível */
+main {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Redes sociais no cabeçalho */
+.social-links {
+    position: absolute;
+    bottom: 10px; 
+    right: 50px; 
+    display: flex;
+    gap: 20px; 
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-links img {
+    width: 37px;
+    height: 37px;
+    transition: transform 0.4s ease; /* Efeito ao passar o mouse */
+}
+
+.social-links img:hover {
+    transform: scale(1.3); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* Links do menu de navegação */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    transition: transform 0.4s ease, color 0.4s ease; /* Transição suave para zoom*/
+    display: inline-block;
+}
+
+/* Efeito ao passar o mouse */
+nav ul li a:hover {
+    transform: scale(1.2); /* Aumenta ligeiramente o texto */
+}
+
+/* Rodapé fixado na parte inferior */
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Estilo do formulário de contato */
+form {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+/* Estilo específico para a área de texto (mensagem) */
+form textarea {
+    resize: vertical; 
+    min-height: 150px; 
+    min-width: 300px; 
+}
+
+/* Estilo do botão de envio */
+form button {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+form button:hover {
+    background-color: #555; /* Cor mais clara ao passar o mouse */
+}
+
+/* Contêiner dos projetos */
+.project-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 300px;
+    overflow: hidden;
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    
+}
+
+/* Imagens dos projetos */
+.project-image {
+    max-width: 1200px; 
+    height: auto; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Contêiner Sobre Mim */
+.about-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o texto e a imagem */
+    justify-content: space-between; /* Adiciona espaço entre os elementos */
+    gap: 20px; 
+    padding: 20px; 
+}
+
+/* Texto Sobre Mim */
+.about-text {
+    flex: 1; /* O texto ocupa o máximo de espaço disponível */
+    text-align: left; /* Garante alinhamento do texto à esquerda */
+}
+
+/* Imagem Sobre Mim */
+.about-photo img {
+    max-width: 500px; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+}

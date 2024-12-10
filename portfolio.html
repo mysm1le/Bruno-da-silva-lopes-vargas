@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Vincula o CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"> <!-- Biblioteca Highlight.js para destacar a sintaxe dos códigos em python -->
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Bruno</h1>
+        <!-- Navegação principal -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre Mim</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <!-- Redes sociais -->
+        <div class="social-links">
+            <a href="https://wa.me/5551992776686" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/bruno.dasilva.7771?locale=pt_BR" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://instagram.com/bruno.vargas1" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/bruno-vargas-263807236/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </header>
+    
+    <!-- Conteúdo principal da página -->
+    <main>
+        <section>
+            <h2>Projetos Recentes</h2> 
+            <p>Abaixo estão alguns dos códigos em python que desenvolvi para concluir um trabalho do modulo "Lógica de Programação e Algoritmos":</p>
+            <br><br>
+            
+            <!-- Artigo sobre o primeiro projeto -->
+            <article>
+                <h3>Sistema de Cálculo de Planos de Saúde</h3>
+                <div class="project-container">
+                    <pre>
+            <code class="language-python">
+            print("\nBem vindo ao Sistema de Bruno da Silva Lopes Vargas")
+            
+            # Inputs
+            valorBase = float(input("Informe o valor Base do plano: R$ "))
+            idade = int(input("Informe a idade do cliente: "))
+            valorMensal = 0
+            
+            # Cálculos
+            if idade >= 0 and idade < 19:
+                valorMensal = valorBase * 100 / 100  # 100%
+            elif idade >= 19 and idade < 29:
+                valorMensal = valorBase * 150 / 100  # 150%
+            elif idade >= 29 and idade < 39:
+                valorMensal = valorBase * 225 / 100  # 225%
+            elif idade >= 39 and idade < 49:
+                valorMensal = valorBase * 240 / 100  # 240%
+            elif idade >= 49 and idade < 59:
+                valorMensal = valorBase * 350 / 100  # 350%
+            elif idade >= 59:
+                valorMensal = valorBase * 600 / 100  # 600%
+            else:
+                print("Idade inválida!")
+            
+            # Mensagens do Sistema
+            print(f"Informe o valor Base do plano: R$ {valorBase:.2f}")
+            print(f"Idade do cliente: {idade}")
+            print(f"O valor mensal do plano é de: R$ {valorMensal:.2f}")
+            </code>
+                    </pre>
+                    <img src="calculo-planos-saude.png" alt="Imagem ilustrativa do Sistema de Cálculo de Planos de Saúde" class="project-image">
+                </div>
+            </article>
+            
+            <article>
+                <h3>Pizzaria</h3>
+                <div class="project-container">
+                    <pre>
+            <code class="language-python">
+            # Menu
+            print("Bem-vindos à Pizzaria do Bruno da Silva Lopes Vargas!")
+            print("-------------------------------------------------")
+            print("------------------- Cardápio --------------------")
+            print("| Tamanho  | Pizza Salgada(PS) | Pizza Doce(PD) |")
+            print("| P        | R$ 30,00          | R$ 34,00       |")
+            print("| M        | R$ 45,00          | R$ 48,00       |")
+            print("| G        | R$ 60,00          | R$ 66,00       |")
+            print("-------------------------------------------------")
+            
+            # Inicializando acumulador de valores
+            total_pedido = 0
+            
+            # Loop para permitir multiplos pedidos
+            while True:
+                sabor = input("Entre com o sabor desejado (PS/PD): ").upper()
+                if sabor not in ["PS", "PD"]:
+                    print("Sabor inválido. Tente novamente")
+                    continue
+                tamanho = input("Entre com o tamanho desejado (P/M/G): ").upper()
+                if tamanho not in ["P", "M", "G"]:
+                    print("Tamanho inválido. Tente novamente")
+                    continue
+            
+                if sabor == "PS":
+                    preco = 30 if tamanho == "P" else 45 if tamanho == "M" else 60
+                else:
+                    preco = 34 if tamanho == "P" else 48 if tamanho == "M" else 66
+            
+                print(f"Você pediu uma Pizza {'Salgada' if sabor == 'PS' else 'Doce'} no tamanho {tamanho}: R$ {preco:.2f}")
+                total_pedido += preco
+            
+                continuar = input("Deseja pedir mais alguma coisa? (S/N): ").upper()
+                if continuar == "N":
+                    break
+            
+            print(f"O valor total a ser pago: R$ {total_pedido:.2f}")
+            </code>
+                    </pre>
+                    <img src="pizzaria.png" alt="Imagem ilustrativa da Pizzaria" class="project-image">
+                </div>
+            </article>
+            
+            <article>
+                <h3>Madeireira do Lenhador</h3>
+                <div class="project-container">
+                    <pre>
+            <code class="language-python">
+            print("Bem-vindos a Madeireira do Lenhador Bruno da Silva Lopes Vargas")
+            print("")
+            
+            def escolha_tipo():
+                while True:
+                    print("PIN - Tora de Pinho")
+                    print("PER - Tora de Peroba")
+                    tipo = input("Entre com o Tipo de Madeira desejado: ").upper()
+                    if tipo == "PIN":
+                        return 150.40
+                    elif tipo == "PER":
+                        return 170.20
+                    else:
+                        print("Escolha inválida, tente novamente")
+            
+            def qtd_toras():
+                while True:
+                    try:
+                        qtd = float(input("Quantidade de toras (m³): "))
+                        if qtd < 100:
+                            return qtd, 0.00
+                        elif qtd < 500:
+                            return qtd, 0.04
+                    except ValueError:
+                        print("Por favor, insira um valor válido.")
+            
+            if __name__ == "__main__":
+                tipo = escolha_tipo()
+                quantidade, desconto = qtd_toras()
+                total = (tipo * quantidade) * (1 - desconto)
+                print(f"Total: R$ {total:.2f}")
+            </code>
+                    </pre>
+                    <!-- imagem ilustrativa -->
+                    <img src="madeira-lenhador.png" alt="Imagem ilustrativa da Madeireira do Lenhador" class="project-image">
+                </div>
+            </article>            
+                </pre>
+            </article>
+        </section>
+    </main>
+    
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Bruno da Silva Lopes Vargas</p>
+    </footer>
+    
+    <!-- Script do Highlight.js para ativar a coloração de código -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> <!-- Inicializa o Highlight.js -->
+</body>
+</html>
